@@ -1,0 +1,20 @@
+
+Functional options:
+1) Always active; thus, plug-in interrupts request-response cycle in order to alter displayed
+code transmitted to the browser.
+2) Switches on/off with the press of the plug-in button; harder option, requires us to keep track of 
+the position/values of found targets. Probably stick to option 1.
+
+
+General flow of program:
+1) Load page --> de-serialize into parseable format
+2) In parseable format, locate representations of money (using regex or find commands)
+3) Live query cost of Tyson Chicken Nuggets (probably cheapest brand), calculate the cost per nugget
+4) Calculate appropriate amount of nuggets to substitute every hit found in (2)
+5) Make replacement
+6) Present page to user
+
+Scripts:
+1) Manifest JSON file (do this last)
+2) Price scrapper (interact with API)
+3) DOM file in JavaScript to find and replace based on price passed in from (2)
