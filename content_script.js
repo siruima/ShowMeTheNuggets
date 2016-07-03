@@ -31,7 +31,7 @@ function handleText(textNode)
     var v = textNode.nodeValue;
 
     var findDollars = /(?:USD|\$|Dollar)(?:\s)?((\d+\.\d+)|(\d+))/g; // find and replace pleb money with noble nuggs
-    v.replace(findDollars, nugCorrection($0))
+    v.replace(findDollars, nugCorrection($1))
 
 }
 
