@@ -1,6 +1,7 @@
 {
 	"manifest_version":2,
 	"name": "Show Me the Nuggets",
+	"version": "1.0",
 	"description": "For those who prefer to see value represented in a more suitable format.",
 	"content_scripts":
 	[
