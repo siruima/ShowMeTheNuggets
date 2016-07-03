@@ -1,0 +1,16 @@
+{
+	"manifest_version":2,
+	"name": "Show Me the Nuggets",
+	"description": "For those who prefer to see value represented in a more suitable format.",
+	"content_scripts":
+	[
+		{
+			"matches": ["*://*/*"],
+			"js": ["content_script.js"],
+			"run_at": "document_end"
+
+		}
+	]
+
+
+}
