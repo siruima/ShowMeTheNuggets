@@ -39,7 +39,8 @@ function handleText(textNode) {
 function nugCorrection(val) {
     // calculate real nugg value, some function nuggValue()
     // for testing, 1 nugget = $3
-    var nugVal = 1 / 3;
+    // replaced testing value with the price from delicious real white meat McNuggets (20 piece deal)
+    var nugVal = 4;
     var nuggets = nugVal * val;
     return String(nuggets.toFixed(2)) + " nuggets";
 }
