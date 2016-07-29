@@ -1,4 +1,10 @@
-walk(document.body);
+var nugg_val = 0;
+
+getNuggValue(function (resp) {
+    nugg_val = resp['conversion'];
+    walk(document.body);
+});
+
 
 function walk(node) {
 
@@ -33,15 +39,23 @@ function handleText(textNode) {
     });
 
     textNode.nodeValue = v;
-
 }
 
 function nugCorrection(val) {
     // calculate real nugg value, some function nuggValue()
     // for testing, 1 nugget = $3
-    // replaced testing value with the price from delicious real white meat McNuggets (20 piece deal)
-    var nugVal = 4;
+    var nugVal = 1 / nugg_val;
     var nuggets = nugVal * val;
     return String(nuggets.toFixed(2)) + " nuggets";
 }
 
+function getNuggValue(callback) {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "https://aqueous-shore-20712.herokuapp.com/whatthenug", true);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            callback(JSON.parse(xhr.responseText));
+        }
+    }
+    xhr.send();
+}
